@@ -1,0 +1,34 @@
+.containerBody {
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ebebe0;
+}
+
+.content {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.restaurant_text {
+  padding: 5px;
+  color: #89959b;
+}
+
+#restaurant_button {
+  width: 100%;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Webkit browsers like Safari and Chrome */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

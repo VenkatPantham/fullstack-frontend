@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Restaurants from "./components/Restaurants";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Review from "./components/Review";
+import AddRestaurant from "./components/AddRestaurant";
+import Order from "./components/Order";
+import ErrorNotFound from "./components/ErrorNotFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Restaurants} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route
+            exact
+            path="/restaurants/:restaurantId/reviews"
+            component={Review}
+          />
+          <Route exact path="/addrestaurant" component={AddRestaurant} />
+          <Route exact path="/order" component={Order} />
+          <Route component={ErrorNotFound} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

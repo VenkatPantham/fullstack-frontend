@@ -1,0 +1,32 @@
+.register {
+  margin: 80px auto;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.registration_text {
+  padding: 5px;
+  font-size: 20px;
+}
+
+.terms {
+  font-size: 15px;
+  color: #89959b;
+}
+
+.terms_a {
+  color: #cb202d;
+}
+
+.register_button {
+  background-color: #cb202d;
+  border-color: #cb202d;
+  padding: 10px 30px;
+  font-size: 20px;
+  width: 100%;
+}
+
+.register_button:hover{
+    border-color: #ba1e2b;
+    background-color: #ba1e2b;
+}

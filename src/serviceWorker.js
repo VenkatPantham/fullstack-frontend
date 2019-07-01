@@ -20,6 +20,13 @@ const isLocalhost = Boolean(
     )
 );
 
+// let get_restaurent_and_reviews = async (restaurant_id) => {
+//   let restaurant_json = {}
+//   let restaurant = await models.Restaurant.findByPk(restaurant_id)
+//   let reviews = await models.Review.findAll({
+
+//   })
+
 export function register(config) {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
