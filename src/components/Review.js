@@ -3,6 +3,7 @@ import axios from "axios";
 import NavigationBar from "./NavigationBar";
 import RestaurantDetails from "./RestaurantDetails";
 import "./Review.css";
+let baseUrl = "ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000";
 
 class res extends Component {
   constructor(props) {
@@ -16,20 +17,22 @@ class res extends Component {
 
   async fetch() {
     await axios
-      .get(`/restaurants/${this.props.match.params.restaurantId}`)
+      .get(`${baseUrl}/restaurants/${this.props.match.params.restaurantId}`)
       .then(restaurant => {
         this.state.restaurant.push(restaurant.data);
         this.setState((this.state.restaurant = this.state.restaurant));
-        axios.get(`/restaurants/${restaurant.data.id}/reviews`).then(review => {
-          review.data.map(item => {
-            axios.get(`/users/${item.userId}`).then(user => {
-              item.user = user.data;
-              this.forceUpdate();
+        axios
+          .get(`${baseUrl}/restaurants/${restaurant.data.id}/reviews`)
+          .then(review => {
+            review.data.map(item => {
+              axios.get(`${baseUrl}/users/${item.userId}`).then(user => {
+                item.user = user.data;
+                this.forceUpdate();
+              });
+              this.state.review.push(item);
             });
-            this.state.review.push(item);
+            this.setState((this.state.review = this.state.review));
           });
-          this.setState((this.state.review = this.state.review));
-        });
       });
   }
 

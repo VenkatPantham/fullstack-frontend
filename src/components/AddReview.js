@@ -1,20 +1,31 @@
 import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import "./Review.css";
+import axios from "axios";
+let baseUrl = "ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000";
 
 class AddReview extends Component {
-  constructor(props) {
+  constructor() {
     super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    axios
+      .post(`${baseUrl}/restaurants/${this.props.data}/review`, {
+        review: event.target.review.value,
+        rating: event.target.rating.value
+      })
+      .then(res => {
+        if (res.status == 201) this.props.history.push("/");
+      });
   }
 
   render() {
     return (
       <div class="review_box">
-        <form
-          action={`/restaurants/${this.props.data}/review`}
-          method="post"
-          className="form-group review_add"
-        >
+        <form onSubmit={this.handleSubmit} className="form-group review_add">
           <h4 align="left">Write a Review</h4>
           <input
             className="form-control"
@@ -30,7 +41,7 @@ class AddReview extends Component {
               required="required"
             />
           </div>
-          <button type="submit" className="btn btn-success review_button">
+          <button className="btn btn-success review_button">
             Add Your Review
           </button>
         </form>
