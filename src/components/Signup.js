@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Signup.css";
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
-let baseUrl = "ec2-13-233-194-69.ap-south-1.compute.amazonaws.com";
+let baseUrl = "ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000";
 
 class Signup extends Component {
   constructor() {
