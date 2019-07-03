@@ -3,7 +3,9 @@ import axios from "axios";
 import NavigationBar from "./NavigationBar";
 import RestaurantDetails from "./RestaurantDetails";
 import "./Review.css";
-let baseUrl = "ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000";
+let baseUrl = process.env.PRODUCTION
+  ? "ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000"
+  : "http://localhost:4000";
 
 class res extends Component {
   constructor(props) {
