@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import "./AddRestaurant.css";
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
-let baseUrl = process.env.PRODUCTION
-  ? "http://ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000"
-  : "http://localhost:4000";
+let baseUrl = "http://ec2-13-233-194-69.ap-south-1.compute.amazonaws.com"
 
 class AddRestaurant extends Component {
   constructor() {
