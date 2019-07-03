@@ -3,7 +3,7 @@ import axios from "axios";
 import NavigationBar from "./NavigationBar";
 import RestaurantDetails from "./RestaurantDetails";
 import "./Review.css";
-let baseUrl = "http://ec2-13-233-194-69.ap-south-1.compute.amazonaws.com"
+let baseUrl = "http://ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000"
 
 class res extends Component {
   constructor(props) {

@@ -4,7 +4,7 @@ import "./Restaurants.css";
 import { Link } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import RestaurantCard from "./RestaurantCard";
-let baseUrl = "http://ec2-13-233-194-69.ap-south-1.compute.amazonaws.com"
+let baseUrl = "http://ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000"
 
 class Restaurants extends Component {
   constructor() {
