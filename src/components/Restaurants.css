@@ -54,7 +54,7 @@
 }
 
 .all-cards-container {
-  min-height: calc(100vh - 155px);
+  min-height: calc(100vh - 171px);
 }
 
 @media screen and (max-width: 1199px) {
@@ -65,16 +65,21 @@
   .post_data {
     margin: auto;
     padding: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .post_title {
     text-decoration: none !important;
-    cursor: pointer;
     margin: auto;
     top: 160px;
     font-size: 20px;
     font-weight: bold;
     color: #cb202d;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .post_type {
@@ -92,12 +97,18 @@
     top: 210px;
     color: #89959b;
     font-size: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .post_time {
     margin: auto;
     color: black;
     font-size: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .post_payment {
@@ -105,13 +116,16 @@
     margin: auto;
     font-size: 15px;
     color: black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .post_rating {
     margin-top: 10px;
     text-align: center;
     background-color: #3f7e00;
-    padding: 0px 5px;
+    padding: 0px 130px;
     border-radius: 5px;
     font-size: 20px;
     color: #ffffff;

@@ -1,23 +1,28 @@
-.navigation {
-  margin: auto;
-  background-color: #cb202d;
-  padding: 0px 20px;
-  color: #ffffff;
-}
-
-.logo {
+/* .logo {
   font-weight: bolder;
   font-size: 30px;
   font-style: italic;
   cursor: pointer;
-}
+} */
 
-.links{
+.links {
   text-decoration: none !important;
 }
 
 @media screen and (max-width: 1199px) {
-  
+  .navigation {
+    margin: auto;
+    background-color: #cb202d;
+    padding-right:20px;
+    color: #ffffff;
+  }
+
+  .navIcon {
+    margin: auto;
+    width: 150px;
+    height: auto;
+  }
+
   .login_button {
     color: #ffffff !important;
   }
@@ -29,6 +34,19 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .navigation {
+    margin: auto;
+    background-color: #cb202d;
+    padding: 0px 20px;
+    color: #ffffff;
+  }
+
+  .navIcon {
+    margin: auto;
+    width: 200px;
+    height: auto;
+  }
+
   .login_button {
     color: #ffffff !important;
   }

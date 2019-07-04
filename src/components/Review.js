@@ -3,9 +3,9 @@ import axios from "axios";
 import NavigationBar from "./NavigationBar";
 import RestaurantDetails from "./RestaurantDetails";
 import "./Review.css";
-let baseUrl = "ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000"
+let baseUrl = "https://student.tomato.tk";
 
-class res extends Component {
+class Review extends Component {
   constructor(props) {
     super();
     this.state = { restaurant: [], review: [] };
@@ -29,7 +29,7 @@ class res extends Component {
                 item.user = user.data;
                 this.forceUpdate();
               });
-              this.state.review.push(item);
+              return this.state.review.push(item);
             });
             this.setState((this.state.review = this.state.review));
           });
@@ -42,11 +42,11 @@ class res extends Component {
         <NavigationBar />
         <div className="container review">
           {this.state.restaurant.map(item => (
-            <RestaurantDetails data={item} reviews={this.state.review} />
+            <RestaurantDetails data={item} history={this.props.history} reviews={this.state.review} />
           ))}
         </div>
       </div>
     );
   }
 }
-export default res;
+export default Review;

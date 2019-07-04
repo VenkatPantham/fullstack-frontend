@@ -4,7 +4,7 @@ import "./Restaurants.css";
 import { Link } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import RestaurantCard from "./RestaurantCard";
-let baseUrl = "http://ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000"
+let baseUrl = "https://student.tomato.tk";
 
 class Restaurants extends Component {
   constructor() {
@@ -19,7 +19,7 @@ class Restaurants extends Component {
   async fetch() {
     await axios.get(`${baseUrl}/restaurants`).then(res => {
       res.data.map(item => {
-        this.state.restaurants.push(item);
+        return this.state.restaurants.push(item);
       });
       this.setState((this.state.restaurants = this.state.restaurants));
     });

@@ -7,8 +7,12 @@ function NavigationBar() {
     <div>
       <nav class="navbar navbar-expand-sm navbar-dark justify-content-between navigation">
         <Link to="/" class="links">
-          <a class="navbar-brand mr-auto logo" href="index">
-            TOMATO
+          <a class="navbar-brand mr-auto" href="index">
+            <img
+              className="navIcon"
+              src={require("../images/nav-icon.png")}
+              alt="Restaurant_Image"
+            />
           </a>
         </Link>
         <button

@@ -48,9 +48,9 @@ export class RestaurantDetails extends Component {
         </div>
         <hr />
         {this.props.reviews.map(item => (
-          <RestaurantReview data={item} />
+          <RestaurantReview data={item} history={this.props.history} />
         ))}
-        <AddReview data={this.props.data.id} />
+        <AddReview data={this.props.data.id} history={this.props.history} />
       </div>
     );
   }

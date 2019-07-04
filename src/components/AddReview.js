@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import "./Review.css";
 import axios from "axios";
-let baseUrl = "http://ec2-13-233-194-69.ap-south-1.compute.amazonaws.com:4000"
+let baseUrl = "https://student.tomato.tk";
 
 class AddReview extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,7 +18,9 @@ class AddReview extends Component {
         rating: event.target.rating.value
       })
       .then(res => {
-        if (res.status == 201) this.props.history.push("/");
+        if (res.status === 201) {
+          this.props.history.push("/");
+        }
       });
   }
 
