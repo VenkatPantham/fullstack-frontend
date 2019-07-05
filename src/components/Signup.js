@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Signup.css";
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
-let baseUrl = "https://student.tomato.tk";
+let baseUrl = "https://clone.tomato.tk";
 
 class Signup extends Component {
   constructor() {

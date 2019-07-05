@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import "./Review.css";
 import axios from "axios";
-let baseUrl = "https://student.tomato.tk";
+let baseUrl = "https://clone.tomato.tk";
 
 class AddReview extends Component {
   constructor(props) {
