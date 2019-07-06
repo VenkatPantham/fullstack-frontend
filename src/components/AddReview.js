@@ -2,26 +2,33 @@ import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import "./Review.css";
 import axios from "axios";
-let baseUrl = "https://clone.tomato.tk";
+let baseUrl = "https://www.tomato.tk";
 
 class AddReview extends Component {
   constructor(props) {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
   handleSubmit(event) {
     event.preventDefault();
+    let form = event.target;
     axios
-      .post(`${baseUrl}/restaurants/${this.props.data}/review`, {
+      .post(`${url}/restaurants/${this.state.rst[0].id}/review`, {
         review: event.target.review.value,
         rating: event.target.rating.value
       })
-      .then(res => {
-        if (res.status === 201) {
-          this.props.history.push("/");
-        }
+      .then(review => {
+        var v = this.state.rev;
+        var i = review.data;
+        axios.get(`${url}/users/${i.userId}`).then(user => {
+          i.user = user.data;
+          this.forceUpdate();
+        });
+        v.push(i);
+        this.setState((this.state.rev = v));
       });
+    form.reset();
   }
 
   render() {

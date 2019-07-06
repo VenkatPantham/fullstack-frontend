@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Signup.css";
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
-let baseUrl = "https://clone.tomato.tk";
+let baseUrl = "https://www.tomato.tk";
 
 class Signup extends Component {
   constructor() {
@@ -19,7 +19,10 @@ class Signup extends Component {
         password: event.target.password.value
       })
       .then(res => {
-        if (res.status === 201) this.props.history.push("/");
+        if (res.status === 201){
+        alert("You have successfully registered!")
+        this.props.history.push("/");
+        }
       });
   }
 

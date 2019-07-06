@@ -3,7 +3,7 @@ import axios from "axios";
 import NavigationBar from "./NavigationBar";
 import RestaurantDetails from "./RestaurantDetails";
 import "./Review.css";
-let baseUrl = "https://clone.tomato.tk";
+let baseUrl = "https://www.tomato.tk";
 
 class Review extends Component {
   constructor(props) {

@@ -38,7 +38,7 @@ function Login() {
             />
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary signin_button">
+            <button type="submit" className="btn btn-disabled signin_button">
               Submit
             </button>
           </div>

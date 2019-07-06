@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./AddRestaurant.css";
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
-let baseUrl = "https://clone.tomato.tk";
+let baseUrl = "https://www.tomato.tk";
 
 class AddRestaurant extends Component {
   constructor() {
