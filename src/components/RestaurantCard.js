@@ -35,7 +35,7 @@ class RestaurantCard extends Component {
                 </p>
               </div>
               <div>
-                <div className="post_rating">{this.props.data.rating}</div>
+                <p className="post_rating">{this.props.data.rating}</p>
                 <p className="post_views">{this.props.data.views} views</p>
                 <p className="post_reviews">
                   {this.props.data.reviews} reviews

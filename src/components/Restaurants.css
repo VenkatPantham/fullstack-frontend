@@ -121,14 +121,19 @@
   }
 
   .post_rating {
+    display: flex;
     margin: 10px 0px;
-    align-content: center !important;
     background-color: #3f7e00;
-    /* padding: 0px 130px; */
     border-radius: 5px;
     font-size: 20px;
+    width: 100%;
     color: #ffffff;
+    justify-content: center;
   }
+  
+  /* .post_rating{
+    margin: auto;
+  } */
 
   .post_views {
     margin: auto;
