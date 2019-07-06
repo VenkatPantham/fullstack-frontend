@@ -5,9 +5,9 @@ import "./NavigationBar.css";
 function NavigationBar() {
   return (
     <div>
-      <nav class="navbar navbar-expand-sm navbar-dark justify-content-between navigation">
-        <Link to="/" class="links">
-          <a class="navbar-brand mr-auto" href="index">
+      <nav className="navbar navbar-expand-sm navbar-dark justify-content-between navigation">
+        <Link to="/">
+          <a className="navbar-brand mr-auto" href="/">
             <img
               className="navIcon"
               src={require("../images/nav-icon.png")}
@@ -16,28 +16,28 @@ function NavigationBar() {
           </a>
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
         >
-          <span class="navbar-toggler-icon" />
+          <span className="navbar-toggler-icon" />
         </button>
         <div
-          class="collapse navbar-collapse flex-grow-0"
+          className="collapse navbar-collapse flex-grow-0"
           id="navbarSupportedContent"
         >
-          <ul class="navbar-nav text-right">
-            <li class="nav-item active">
-              <Link to="/login" class="links">
-                <a class="nav-link login_button" href="login">
+          <ul className="navbar-nav text-right">
+            <li className="nav-item active">
+              <Link to="/login" className="links">
+                <a className="nav-link login_button" href="login">
                   Login
                 </a>
               </Link>
             </li>
-            <li class="nav-item active">
+            <li className="nav-item active">
               <Link className="links" to="/signup">
-                <a class="nav-link create_button" href="registration">
+                <a className="nav-link create_button" href="registration">
                   Create an account
                 </a>
               </Link>

@@ -121,8 +121,8 @@
   }
 
   .post_rating {
-    margin-top: 10px;
-    text-align: center;
+    margin: 10px 0px;
+    align-content: center !important;
     background-color: #3f7e00;
     /* padding: 0px 130px; */
     border-radius: 5px;

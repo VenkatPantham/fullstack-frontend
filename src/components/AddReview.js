@@ -9,31 +9,32 @@ class AddReview extends Component {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
+
   handleSubmit(event) {
     event.preventDefault();
-    let form = event.target;
     axios
-      .post(`${baseUrl}/restaurants/${this.state.rst[0].id}/review`, {
+      .post(`${baseUrl}/restaurants/${this.props.data}/review`, {
         review: event.target.review.value,
         rating: event.target.rating.value
       })
       .then(review => {
-        var v = this.state.rev;
-        var i = review.data;
-        axios.get(`${baseUrl}/users/${i.userId}`).then(user => {
-          i.user = user.data;
-          this.forceUpdate();
-        });
-        v.push(i);
-        this.setState((this.state.rev = v));
+        console.log(review.config.data);
+        // var v = this.state.rev;
+        // var i = review.data;
+        // axios.get(`${baseUrl}/users/${i.userId}`).then(user => {
+        //   i.user = user.data;
+        //   this.forceUpdate();
+        // });
+        // v.push(i);
+        // this.setState((this.state.rev = v));
       });
-    form.reset();
+    event.target.reset();
+    // StarRatingComponent.reset();
   }
 
   render() {
     return (
-      <div class="review_box">
+      <div className="review_box">
         <form onSubmit={this.handleSubmit} className="form-group review_add">
           <h4 align="left">Write a Review</h4>
           <input

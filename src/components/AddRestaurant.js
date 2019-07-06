@@ -32,110 +32,110 @@ class AddRestaurant extends Component {
     return (
       <div>
         <NavigationBar />
-        <div class="container containerBody">
+        <div className="container containerBody">
           <h3>
             <b>Add a Restaurant</b>
           </h3>
           <h5>
             <b>Basic Info</b>
           </h5>
-          <div class="container content">
+          <div className="container content">
             <form onSubmit={this.handleSubmit} method="post">
-              <div class="form-group">
-                <label class="restaurant_text">RESTAURANT NAME</label>
+              <div className="form-group">
+                <label className="restaurant_text">RESTAURANT NAME</label>
                 <input
                   type="text"
                   name="name"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Enter Restaurant Name"
                   required
                 />
               </div>
-              <div class="form-group">
-                <label class="restaurant_text">CITY</label>
+              <div className="form-group">
+                <label className="restaurant_text">CITY</label>
                 <input
                   type="text"
                   name="city"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Enter Restaurant City"
                   required
                 />
               </div>
-              <div class="form-group">
-                <label class="restaurant_text">PHONE NUMBER</label>
+              <div className="form-group">
+                <label className="restaurant_text">PHONE NUMBER</label>
                 <input
                   name="phoneNo"
                   step="0"
                   type="number"
                   pattern=".{10}"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Enter Restaurant Phone Number"
                   required
                 />
               </div>
-              <div class="form-group">
-                <label class="restaurant_text">RESTAURANT TYPE</label>
+              <div className="form-group">
+                <label className="restaurant_text">RESTAURANT TYPE</label>
                 <input
                   type="text"
                   name="type"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Enter Restaurant Type"
                   required
                 />
               </div>
-              <div class="form-group">
-                <label class="restaurant_text">COST</label>
+              <div className="form-group">
+                <label className="restaurant_text">COST</label>
                 <input
                   type="number"
                   name="minCost"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Enter Restaurant Cost"
                   required
                 />
               </div>
-              <div class="form-group">
-                <label class="restaurant_text">TIME</label>
+              <div className="form-group">
+                <label className="restaurant_text">TIME</label>
                 <input
                   type="number"
                   name="minTime"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Enter Restaurant Time"
                   required
                 />
               </div>
-              <div class="form-group">
-                <label class="restaurant_text">RESTAURANT IMAGE</label>
+              <div className="form-group">
+                <label className="restaurant_text">RESTAURANT IMAGE</label>
                 <input
                   type="text"
                   name="image"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Enter Restaurant Image URL"
                   required
                 />
               </div>
-              <label class="restaurant_text">OPENING STATUS</label>
+              <label className="restaurant_text">OPENING STATUS</label>
               <br />
-              <div class="form-check form-check-inline">
+              <div className="form-check form-check-inline">
                 <input
                   name="openStatus"
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   value="true"
                   required
                 />
-                <label class="form-check-label">
+                <label className="form-check-label">
                   This place is already opened
                 </label>
               </div>
-              <div class="form-check form-check-inline">
+              <div className="form-check form-check-inline">
                 <input
                   name="openStatus"
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   value="false"
                   required
                 />
-                <label class="form-check-label">
+                <label className="form-check-label">
                   This place is opening soon
                 </label>
               </div>
@@ -143,7 +143,7 @@ class AddRestaurant extends Component {
               <br />
               <button
                 type="submit"
-                class="btn btn-success"
+                className="btn btn-success"
                 id="restaurant_button"
               >
                 Add Restaurant
