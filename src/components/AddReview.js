@@ -14,14 +14,14 @@ class AddReview extends Component {
     event.preventDefault();
     let form = event.target;
     axios
-      .post(`${url}/restaurants/${this.state.rst[0].id}/review`, {
+      .post(`${baseUrl}/restaurants/${this.state.rst[0].id}/review`, {
         review: event.target.review.value,
         rating: event.target.rating.value
       })
       .then(review => {
         var v = this.state.rev;
         var i = review.data;
-        axios.get(`${url}/users/${i.userId}`).then(user => {
+        axios.get(`${baseUrl}/users/${i.userId}`).then(user => {
           i.user = user.data;
           this.forceUpdate();
         });

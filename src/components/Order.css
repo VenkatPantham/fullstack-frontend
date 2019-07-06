@@ -29,7 +29,7 @@ img.bg {
   left: 5%;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 470px) {
   img.bg {
     left: 50%;
     margin-left: -512px;
@@ -51,7 +51,7 @@ img.bg {
   }
 }
 
-@media only screen and (min-width: 421px) and (max-width: 1024px) {
+@media only screen and (min-width: 471px) and (max-width: 1024px) {
   img.bg {
     left: 50%;
     margin-left: -512px;
