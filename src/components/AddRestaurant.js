@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./AddRestaurant.css";
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
-let baseUrl = "https://www.tomato.tk";
+let baseUrl = "http://localhost:4000";
 
 class AddRestaurant extends Component {
   constructor() {
@@ -89,7 +89,7 @@ class AddRestaurant extends Component {
                   type="number"
                   name="minCost"
                   className="form-control"
-                  placeholder="Enter Restaurant Cost"
+                  placeholder="Enter Restaurant Minimum Cost"
                   required
                 />
               </div>
@@ -99,7 +99,7 @@ class AddRestaurant extends Component {
                   type="number"
                   name="minTime"
                   className="form-control"
-                  placeholder="Enter Restaurant Time"
+                  placeholder="Enter Restaurant Minimum Time"
                   required
                 />
               </div>

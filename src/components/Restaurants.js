@@ -4,7 +4,7 @@ import "./Restaurants.css";
 import { Link } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import RestaurantCard from "./RestaurantCard";
-let baseUrl = "https://www.tomato.tk";
+let baseUrl = "http://localhost:4000";
 
 class Restaurants extends Component {
   constructor() {

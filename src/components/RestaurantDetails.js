@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import AddReview from "./AddReview";
 import RestaurantReview from "./RestaurantReview";
 import "./Review.css";
 
@@ -48,9 +47,8 @@ export class RestaurantDetails extends Component {
         </div>
         <hr />
         {this.props.reviews.map(item => (
-          <RestaurantReview data={item} history={this.props.history} />
+          <RestaurantReview data={item} />
         ))}
-        <AddReview data={this.props.data.id} history={this.props.history} />
       </div>
     );
   }

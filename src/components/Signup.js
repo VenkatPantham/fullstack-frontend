@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Signup.css";
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
-let baseUrl = "https://www.tomato.tk";
+let baseUrl = "http://localhost:4000";
 
 class Signup extends Component {
   constructor() {
@@ -16,13 +16,17 @@ class Signup extends Component {
       .post(`${baseUrl}/user`, {
         username: event.target.username.value,
         useremail: event.target.useremail.value,
+        image: event.target.image.value,
         password: event.target.password.value
       })
       .then(res => {
-        if (res.status === 201){
-        alert("You have successfully registered!")
-        this.props.history.push("/");
+        if (res.status === 201) {
+          alert("You have successfully registered!");
+          this.props.history.push("/");
         }
+      })
+      .catch(res => {
+        alert("User with this Email already exists!");
       });
   }
 
@@ -48,6 +52,7 @@ class Signup extends Component {
                 type="text"
                 className="form-control"
                 id="inputName"
+                placeholder="Enter your Full Name"
                 required
               />
             </div>
@@ -63,6 +68,7 @@ class Signup extends Component {
                 type="email"
                 className="form-control"
                 id="inputEmail"
+                placeholder="Enter your Email Adress"
                 data-error="Enter the valid email address is invalid"
                 requiredclassName="terms_a"
               />
@@ -79,7 +85,18 @@ class Signup extends Component {
                 name="password"
                 type="password"
                 className="form-control"
+                placeholder="Enter your Password"
                 id="inputPassword"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label className="control-label registration_text">Image</label>
+              <input
+                name="image"
+                type="text"
+                placeholder="Enter your Image URL"
+                className="form-control"
                 required
               />
             </div>
@@ -91,7 +108,7 @@ class Signup extends Component {
                     data-error="Please accept the terms and regulations"
                     required
                   />
-                  I agree to tomato's{" "}
+                  &nbsp;I agree to tomato's{" "}
                   <strong>Terms of Service, Privacy Policy</strong> and{" "}
                   <strong>Content Policies</strong>
                 </label>
