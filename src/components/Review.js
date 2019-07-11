@@ -4,7 +4,7 @@ import NavigationBar from "./NavigationBar";
 import RestaurantDetails from "./RestaurantDetails";
 import StarRatingComponent from "react-star-rating-component";
 import "./Review.css";
-let baseUrl = "https://www.tomato.tk";
+let baseUrl = "https://aws.tomato.tk";
 
 class Review extends Component {
   constructor(props) {
