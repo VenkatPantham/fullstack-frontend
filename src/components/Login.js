@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Login.css";
 import axios from "axios";
 import NavigationBar from "./NavigationBar";
-let baseUrl = "https://aws.tomato.tk";
+import { baseUrl } from "./baseUrl";
 
 class Login extends Component {
   constructor() {
@@ -15,9 +15,9 @@ class Login extends Component {
     axios
       .post(`${baseUrl}/users/login`, {
         useremail: event.target.useremail.value,
-        password: event.target.password.value
+        password: event.target.password.value,
       })
-      .then(res => {
+      .then((res) => {
         if (res.status === 200) this.props.push("/");
       });
   }

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import NavigationBar from "./NavigationBar";
+import { baseUrl } from "./baseUrl";
 import RestaurantDetails from "./RestaurantDetails";
 import AddReview from "./AddReview";
 import "./Review.css";
-let baseUrl = "https://aws.tomato.tk";
 
 class Review extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class Review extends Component {
   }
 
   handleUpdate(review) {
-    axios.get(`${baseUrl}/users/${review.data.userId}`).then(user => {
+    axios.get(`${baseUrl}/users/${review.data.userId}`).then((user) => {
       review.data.user = user.data;
       this.forceUpdate();
     });
@@ -28,14 +28,14 @@ class Review extends Component {
   async fetch() {
     await axios
       .get(`${baseUrl}/restaurants/${this.props.match.params.restaurantId}`)
-      .then(restaurant => {
+      .then((restaurant) => {
         this.state.restaurant.push(restaurant.data);
         this.setState((this.state.restaurant = this.state.restaurant));
         axios
           .get(`${baseUrl}/restaurants/${restaurant.data.id}/reviews`)
-          .then(review => {
-            review.data.map(item => {
-              axios.get(`${baseUrl}/users/${item.userId}`).then(user => {
+          .then((review) => {
+            review.data.map((item) => {
+              axios.get(`${baseUrl}/users/${item.userId}`).then((user) => {
                 item.user = user.data;
                 this.forceUpdate();
               });
@@ -44,7 +44,7 @@ class Review extends Component {
             this.setState((this.state.review = this.state.review));
           });
       })
-      .catch(err => {
+      .catch((err) => {
         alert("No Restaurant found with this ID!");
         this.props.history.push("/");
       });
@@ -55,7 +55,7 @@ class Review extends Component {
       <div>
         <NavigationBar />
         <div className="container review">
-          {this.state.restaurant.map(item => (
+          {this.state.restaurant.map((item) => (
             <RestaurantDetails data={item} reviews={this.state.review} />
           ))}
           <AddReview

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Signup.css";
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
-let baseUrl = "https://aws.tomato.tk";
+import { baseUrl } from "./baseUrl";
 
 class Signup extends Component {
   constructor() {
@@ -17,15 +17,15 @@ class Signup extends Component {
         username: event.target.username.value,
         useremail: event.target.useremail.value,
         image: event.target.image.value,
-        password: event.target.password.value
+        password: event.target.password.value,
       })
-      .then(res => {
+      .then((res) => {
         if (res.status === 201) {
           alert("You have successfully registered!");
           this.props.history.push("/");
         }
       })
-      .catch(res => {
+      .catch((res) => {
         alert("User with this Email already exists!");
       });
   }

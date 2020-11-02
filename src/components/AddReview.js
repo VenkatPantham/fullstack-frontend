@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import axios from "axios";
+import { baseUrl } from "./baseUrl";
 import "./Review.css";
-let baseUrl = "https://aws.tomato.tk";
 
 class AddReview extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class AddReview extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onStarClick = this.onStarClick.bind(this);
     this.state = {
-      rating: 0
+      rating: 0,
     };
   }
 
@@ -25,9 +25,9 @@ class AddReview extends Component {
     axios
       .post(`${baseUrl}/restaurants/${this.props.data}/review`, {
         review: event.target.review.value,
-        rating: event.target.ratings.value
+        rating: event.target.ratings.value,
       })
-      .then(rev => {
+      .then((rev) => {
         this.props.updated(rev);
       });
     form.reset();

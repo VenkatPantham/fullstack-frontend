@@ -46,8 +46,8 @@ export class RestaurantDetails extends Component {
           </div>
         </div>
         <hr />
-        {this.props.reviews.map(item => (
-          <RestaurantReview data={item} />
+        {this.props.reviews.map((item, index) => (
+          <RestaurantReview key={index} data={item} />
         ))}
       </div>
     );

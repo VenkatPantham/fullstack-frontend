@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./AddRestaurant.css";
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
-let baseUrl = "https://aws.tomato.tk";
+import { baseUrl } from "./baseUrl";
 
 class AddRestaurant extends Component {
   constructor() {
@@ -21,9 +21,9 @@ class AddRestaurant extends Component {
         minCost: event.target.minCost.value,
         minTime: event.target.minTime.value,
         image: event.target.image.value,
-        openStatus: event.target.openStatus.value
+        openStatus: event.target.openStatus.value,
       })
-      .then(res => {
+      .then((res) => {
         if (res.status === 201) this.props.history.push("/");
       });
   }

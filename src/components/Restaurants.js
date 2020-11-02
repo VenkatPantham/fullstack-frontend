@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { baseUrl } from "./baseUrl";
 import "./Restaurants.css";
 import { Link } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import RestaurantCard from "./RestaurantCard";
-let baseUrl = "https://aws.tomato.tk";
 
 class Restaurants extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { restaurants: [] };
   }
 
@@ -17,11 +17,8 @@ class Restaurants extends Component {
   }
 
   async fetch() {
-    await axios.get(`${baseUrl}/restaurants`).then(res => {
-      res.data.map(item => {
-        return this.state.restaurants.push(item);
-      });
-      this.setState((this.state.restaurants = this.state.restaurants));
+    await axios.get(`${baseUrl}/restaurants`).then((res) => {
+      this.setState((this.state.restaurants = res.data));
     });
   }
 
@@ -32,8 +29,8 @@ class Restaurants extends Component {
         <div className="py-5 all-cards-container">
           <div className="container" id="background">
             <div className="row hidden-sm-up">
-              {this.state.restaurants.map(item => (
-                <RestaurantCard data={item} />
+              {this.state.restaurants.map((item, index) => (
+                <RestaurantCard key={index} data={item} />
               ))}
             </div>
           </div>
